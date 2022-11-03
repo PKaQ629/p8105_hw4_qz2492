@@ -8,4 +8,4 @@ output:
 
 Welcome to website for P8105 Data Science I!
 
-In this website, you can get to know about me and find three plotly plots shown on flexdashboard.
+In this website, you can get to know about [me](about.html) and find three plotly plots shown on flexdashboard.
