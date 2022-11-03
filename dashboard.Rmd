@@ -1,0 +1,78 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(viridis)
+library(p8105.datasets)
+library(ggridges)
+library(plotly) #load libraries
+```
+
+
+```{r, tidy_data, include=FALSE}
+ 
+data(ny_noaa) 
+ny_tidy = ny_noaa %>%
+  separate(date, into = c("year", "month", "day"), sep = "-") %>%
+  mutate( #convert values of prcp to mm and temp to ºC
+    tmax_c = as.double(tmax) / 10,
+    tmin_c = as.double(tmin) / 10,
+    prcp_c = as.double(prcp) / 10 
+  ) 
+
+```
+
+
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Average max temperature in January and in July in each station across years.
+```{r, plot_1}
+ny_tidy %>% 
+  filter(month == "01" | month == "07") %>%
+  group_by(id, year, month) %>%
+  summarize(avg_tmax = mean(tmax_c, rm.na = TRUE)) %>%
+  plot_ly(x = ~ month, y = ~avg_tmax, color = ~ year, type = "box") %>%
+  layout(boxmode = "group",
+         yaxis = list(title = "Mean Max Temperature (ºC)")) #create boxplot by month
+```
+
+
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### tmax vs tmin 
+
+```{r, plot_2}
+hex_ggplot = ny_tidy %>% 
+  ggplot(aes(x = tmax_c, y = tmin_c)) + 
+  geom_hex() +
+  labs(
+    title = "Maximum Temperature vs Minimum Temperature",
+    x = "Maximum Temperature (ºC)",
+    y = "Minimum Temperature (ºC)"
+  )
+ggplotly(hex_ggplot)
+```
+
+
+### A plot showing the distribution of snowfall values greater than 0 and less than 100 separately by year
+
+```{r, plot_3}
+ny_tidy %>%
+  filter(snow > 0 & snow < 100) %>%
+  plot_ly(x = ~ year, y = ~ snow, split = ~ year, type = "violin",
+          box = list(visible = T),
+          meanline = list(visible = T)) %>%
+  layout(xaxis = list(title = "Year"),
+         yaxis = list(title = "Snowfall (mm)")) #plot violin showing distribution
+```

@@ -1,0 +1,71 @@
+---
+title: "Curriculum Vitae"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+
+## Qilin Zheng
+
+Tel: (+1) 347-744-2340
+
+Email: qz2492@cumc.columbia.edu
+
+
+### EDUCATION
+
+**Columbia University** [New York]{style="float:right"}
+
+_MS, Biostatistics_ [September 2022 - Present]{style="float:right"}
+
+**Shanghai Jiao Tong University** [Shanghai]{style="float:right"}
+
+_BS, Biotechnology(Bioinformatics Track)_ [September 2018 - June 2022]{style="float:right"}
+
+
+### LANGUAGES
+
+English(fluent) and Mandarin(native)
+
+
+### TECHNICAL SKILLS
+
+C/C++, Java, SQL, R, Python, Linux Shell
+
+
+### RESEARCH EXPERIENCE
+
+__Prediction of Patient Survival Ratios, Using Deep Learning of Glioma Histopathological Images__ [July 2021-Aug 2021]{style="float:right"}
+
+Used affine and elastic transformation to conduct data augmentation
+
+Built convolutional neural network (CNN), conducted parameters tuning, model training and verification
+
+Implemented function for analyzing histopathological images of glioma and predicting patient survival ratios
+
+__Fake News Detection Based on Deep Learning__[July 2021-Aug 2021]{style="float:right"}
+
+Detected news stances by analyzing correlation between headlines and news content using Deep Learning
+
+Performed data analysis and preprocessing, removed unmeaningful words and normalized words
+
+Implemented words embedding and feature extraction, set up and tested the model
+
+Judged news stance by analyzing correlation between headlines and contents using Random Forest and Neural Network
+
+__CT Differential Diagnosis of Benign and Malignant Pulmonary Nodules Based on Deep Learning__[Mar 2021-Apr 2021]{style="float:right"}
+
+Completed literature review, split dataset into the training and test data, and finished image segmentation
+
+Built convolutional neural network model and fine-tuned model parameters
+
+Implemented function to judge nature of pulmonary nodules, and analyzed chest CT images to differentiate benign and malignant pulmonary nodules, achieving an accuracy of 0.92 for training set and 0.82 for test set
+
+__Establishment of Database on NBA__[Nov 2020-Jan 2021]{style="float:right"}]
+
+Used R to crawl data, built back-end database with a SQL script and connected front end to back-end database using PHP
+
+Built database containing basic information, detailed field data, team information sheet and schedules.
+
+Developed functions of database query and data visualization.

@@ -1,0 +1,19 @@
+name: "Qilin.Z" 
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "About me"
+      href: about.html
+    - text: "CV"
+      href: CV.html  
+    - text: "Dashboard"
+      href: dashboard.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<qz2492@cumc.columbia>
+    - icon: fa-github fa-lg
+      href: http://github.com/PKaQ629/
+    
+output:
+  html_document:
+    theme: journal
